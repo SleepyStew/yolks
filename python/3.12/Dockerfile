@@ -3,7 +3,7 @@ FROM        --platform=$TARGETOS/$TARGETARCH python:3.12-slim-bookworm
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         apt update \
-            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps tini default-libmysqlclient \
+            && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps tini default-libmysqlclient-dev build-essential \
             && useradd -m -d /home/container container
 
 USER        container
